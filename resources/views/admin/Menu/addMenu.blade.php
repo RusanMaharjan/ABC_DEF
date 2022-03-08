@@ -15,7 +15,6 @@
             <input type="text" name="menuName" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Add &rarr;</button>
-        <a href="#" class="btn btn-primary">Add &rarr;</a>
     </form>
 
 @endsection
