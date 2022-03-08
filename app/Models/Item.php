@@ -9,7 +9,7 @@ class Item extends Model
 {
     use HasFactory;
     protected $table = 'items';
-    protected $primary_key = 'itemId';
+    protected $primaryKey = 'itemId';
 
     public function menu() {
         return $this->belongsTo(Menu::class, 'menuId');

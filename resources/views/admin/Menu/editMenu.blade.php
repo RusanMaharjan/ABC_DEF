@@ -1,10 +1,10 @@
 @extends('layouts.main')
 @section('content')
-<div class="alert alert-success" role="alert">
-    @if (Session::has('message'))
-        {{ Session::get('message') }}
-    @endif
-</div>
+    <div class="alert alert-success" role="alert">
+        @if (Session::has('message'))
+            {{ Session::get('message') }}
+        @endif
+    </div>
     <form action="{{ route('updateMenu') }}" method="post">
         @csrf
         <div class="mb-3">
@@ -16,5 +16,4 @@
         </div>
         <button class="btn btn-primary" type="submit">Edit</button>
     </form>
-
 @endsection
