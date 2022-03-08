@@ -18,15 +18,27 @@ class MenuController extends Controller
         return back()->with('message','Menu created successfully.');
     }
 
+    // public function edit($menuId) {
+    //     $menu = Menu::find($menuId);
+    //     return view('admin.Menu.editMenu',compact('menu'));
+    // }
+
+    // public function updateMenu(Request $request) {
+    //     $menus = Menu::find($request->menuId);
+    //     $menus->menuName = $request->menuName;
+    //     $menus->save();
+    //     return back()->with('message', 'Menu Updated Successfully.');
+    // }
+
     public function edit($menuId) {
         $menu = Menu::find($menuId);
-        return view('admin.Menu.editMenu',compact('menu'));
+        return view('admin.Menu.editMenu', compact('menu'));
     }
 
-    public function update(Request $request) {
-        $menu = Menu::find($request->menuId);
-        $menu->menuName = $request->menuName;
-        $menu->save();
+    public function updateMenu(Request $request) {
+        $menus = Menu::find($request->menuId);
+        $menus->menuName = $request->menuName;
+        $menus->save();
         return back()->with('message', 'Menu updated successfully.');
     }
 

@@ -30,7 +30,7 @@ Route::get('/allItem',[ItemController::class,'all'])->name('allItem');
 Route::get('/addMenu',[MenuController::class,'index'])->name('addMenu');
 Route::post('/createMenu',[MenuController::class,'create'])->name('createMenu');
 Route::get('/editMenu/{menuId}',[MenuController::class,'edit'])->name('editMenu');
-Route::post('/updateMenu',[MenuController::class,'update'])->name('updateMenu');
+Route::post('/updateMenu',[MenuController::class,'updateMenu'])->name('updateMenu');
 Route::get('/allMenu',[MenuController::class,'all'])->name('allMenu');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

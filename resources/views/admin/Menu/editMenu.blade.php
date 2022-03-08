@@ -1,19 +1,21 @@
 @extends('layouts.main')
 @section('content')
+    
+
     <div class="alert alert-success" role="alert">
         @if (Session::has('message'))
             {{ Session::get('message') }}
         @endif
     </div>
+    
     <form action="{{ route('updateMenu') }}" method="post">
         @csrf
-        <div class="mb-3">
-            <input type="hidden" name="menuiId" class="form-control">
-        </div>
+        <input type="hidden" name="menuId" value="{{ $menu->menuId }}">
         <div class="mb-3">
             <label for="menuName" class="form-label">Menu Name</label>
-            <input type="text" name="menuName" value="{{ $menu->menuName }}" class="form-control">
+            <input type="text" name="menuName" class="form-control" value="{{ $menu->menuName }}">
         </div>
-        <button class="btn btn-primary" type="submit">Edit</button>
+        <button type="submit" class="btn btn-primary">Edit &rarr;</button>
     </form>
+
 @endsection
