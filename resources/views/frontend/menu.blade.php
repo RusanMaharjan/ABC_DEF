@@ -3,15 +3,11 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h1>Breakfast</h1>
-            </div>
-            <div class="col-md-4">
-                <h1>Lunch</h1>
-            </div>
-            <div class="col-md-4">
-                <h1>Dinner</h1>
-            </div>
+            @foreach ($menus as $menu)                
+                <div class="col-md-4 mb-3">
+                    <h1>{{ $menu->menuName }}</h1>
+                </div>
+            @endforeach
         </div>
 
         <div class="row">

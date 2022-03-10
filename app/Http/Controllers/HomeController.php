@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function home() {
-        return view('frontend.menu');
+        $menus = Menu::all();
+        return view('frontend.menu', compact('menus'));
     }
 }
