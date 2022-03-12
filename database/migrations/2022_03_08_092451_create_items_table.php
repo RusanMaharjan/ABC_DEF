@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('description');
             $table->string('price');
-            $table->unsignedBigInteger('menu');
-            $table->foreign('menu')->references('menuId')->on('menus')->onDelete('cascade');
+            $table->unsignedBigInteger('menuId');
+            $table->foreign('menuId')->references('menuId')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });
     }

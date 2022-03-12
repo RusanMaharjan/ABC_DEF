@@ -14,19 +14,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Bhat</td>
-        <td><img src="{{ url('frontend/image/download.jfif') }}" alt="vayo"></td>
-        <td>BF</td>
-        <td>Dal Bhat</td>
-        <td>Rs. 500</td>
-        <td>
-            <a href="#" class="btn btn-info">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-        </td>
-      </tr>
-      <tr>
+      @foreach ($items as $item)          
+        <tr>
+          <td>{{ $item->itemId }}</td>
+          <td>{{ $item->itemName }}</td>
+          <td><img src="{{ url('image') }}/{{ $item->image }}" alt="vayo"></td>
+          <td>{{ $item->menu->menuName }}</td>
+          <td>{{ $item->price }}</td>
+          <td>
+              <a href="#" class="btn btn-info">Edit</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      @endforeach
+      {{-- <tr>
         <td>2</td>
         <td>MOMO</td>
         <td><img src="{{ url('frontend/image/download.jfif') }}" alt="vayo"></td>
@@ -49,10 +50,9 @@
             <a href="#" class="btn btn-info">Edit</a>
             <a href="#" class="btn btn-danger">Delete</a>
         </td>
-      </tr>
+      </tr> --}}
     </tbody>
   </table>
 
   <a href="{{ route('addItem') }}" class="btn btn-primary">Add item</a>
-
 @endsection
