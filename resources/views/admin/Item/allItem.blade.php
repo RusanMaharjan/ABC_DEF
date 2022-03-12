@@ -53,4 +53,6 @@
     </tbody>
   </table>
 
+  <a href="{{ route('addItem') }}" class="btn btn-primary">Add item</a>
+
 @endsection

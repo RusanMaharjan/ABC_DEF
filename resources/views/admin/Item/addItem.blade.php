@@ -12,11 +12,11 @@
         </div>
         <div class="mb-3">
             <label for="menuCategory" class="form-label">Menu Category</label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="menu" aria-label="Default select example">
                 <option selected>--- Select Menu ---</option>
-                <option value="1">B</option>
-                <option value="2">L</option>
-                <option value="3">D</option>
+                @foreach ($menus as $menu)
+                    <option value="{{ $menu->menuId }}">{{ $menu->menuName }}</option>
+                @endforeach
             </select>
         </div>
         <div class="mb-3">

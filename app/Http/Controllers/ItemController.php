@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
     public function index() {
-        return view('admin.Item.addItem');
+        $menus = Menu::all();
+        return view('admin.Item.addItem', compact('menus'));
+    }
+
+    public function create(Request $request) {
+        
     }
 
     public function edit() {
