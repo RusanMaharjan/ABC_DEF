@@ -27,30 +27,6 @@
           </td>
         </tr>
       @endforeach
-      {{-- <tr>
-        <td>2</td>
-        <td>MOMO</td>
-        <td><img src="{{ url('frontend/image/download.jfif') }}" alt="vayo"></td>
-        <td>L</td>
-        <td>MOMO</td>
-        <td>Rs. 500</td>
-        <td>
-            <a href="#" class="btn btn-info">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Bhat</td>
-        <td><img src="{{ url('frontend/image/download.jfif') }}" alt="vayo"></td>
-        <td>D</td>
-        <td>Dal Bhat</td>
-        <td>Rs. 500</td>
-        <td>
-            <a href="#" class="btn btn-info">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-        </td>
-      </tr> --}}
     </tbody>
   </table>
 
