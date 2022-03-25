@@ -23,8 +23,9 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 
 Route::get('/addItem',[ItemController::class,'index'])->name('addItem');
 Route::post('/createItem',[ItemController::class,'create'])->name('createItem');
-Route::get('/editItem',[ItemController::class,'edit'])->name('editItem');
 Route::get('/allItem',[ItemController::class,'all'])->name('allItem');
+Route::get('/editItem/{itemId}',[ItemController::class,'edit'])->name('editItem');
+Route::post('/updateItem',[ItemController::class,'update'])->name('updateItem');
 // Route::get('/deleteItem',[ItemController::class,'index'])->name('addItem');
 
 Route::get('/addMenu',[MenuController::class,'index'])->name('addMenu');

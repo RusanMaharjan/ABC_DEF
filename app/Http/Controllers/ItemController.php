@@ -38,12 +38,32 @@ class ItemController extends Controller
     }
 
     //get id and show edit page
-    public function edit() {
-        return view('admin.Item.editItem');
+    public function edit($itemId) {
+        $menus = Menu::all();
+        $item = Item::find($itemId);
+        return view('admin.Item.editItem', compact('item', 'menus'));
     }
 
     //update data of item
-    public function update() {
-
+    public function update(Request $request) {
+        $items = Item::find($request->itemId);
+        $items->itemName = $request->itemName;
+        $items->description = $request->description;
+        $items->price = $request->price;
+        $items->menuId = $request->menuId;
+        $img = $request->file;
+        if($img) {
+            $imgName=time().'.'.$img->getClientoriginalExtension();
+            $request->file->move('image',$imgName);
+            $items->image=$imgName;
+        }
+        $items->save();
+        return back()->with('message', 'Item updated successfully.');
     }
+
+    public function delete($itemId) {
+        Item::where('itemId', $itemId)->delete();
+        return back()->with('message', 'Item deleted successfully.');
+    }
+
 }

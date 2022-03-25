@@ -20,9 +20,10 @@
           <td>{{ $item->itemName }}</td>
           <td><img src="{{ url('image') }}/{{ $item->image }}" alt="vayo"></td>
           <td>{{ $item->menu->menuName }}</td>
+          <td>{{ $item->description }}</td>
           <td>{{ $item->price }}</td>
           <td>
-              <a href="#" class="btn btn-info">Edit</a>
+              <a href="/editItem/{{ $item->itemId }}" class="btn btn-info">Edit</a>
               <a href="#" class="btn btn-danger">Delete</a>
           </td>
         </tr>
